@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opplevelser Sunnmøre: Fjord, Fjell & Kultur | Sunnmøre Explore</title>
     <meta name="description" content="Søker du en totalopplevelse på Sunnmøre? Sunnmøre Explore tilbyr unike kombinasjoner av fjord, fjell og kultur. Klatring, fjellturer, kurs og mer.">
-    <meta name="keywords" content="Opplevelser Sunnmøre, Fjelltur Sunnmøre, Fjord Sunnmøre, Kultur Sunnmøre, Klatrekurs Sunnmøre, Fjellguiding Sunnmøre, Sunnmørsalpene, Topptur Sunnmøre, Ørsta, Ulsteinvik, Hilde Maria Nicolaisen">
+    <meta name="keywords" content="Opplevelser Sunnmøre, Fjelltur Sunnmøre, Fjord Sunnmøre, Kultur Sunnmøre, Klatrekurs Sunnmøre, Sunnmørsalpene, Topptur Sunnmøre, Ørsta, Ulsteinvik, Hilde Maria Nicolaisen">
 
-    <!-- SEO: Linker til språkversjoner - OPPDATERT MED KORREKT STI -->
+    <!-- SEO: Linker til språkversjoner -->
     <!-- VIKTIG: Endre URL hvis ditt GitHub brukernavn/repo er annerledes -->
     <link rel="canonical" href="https://bredeespelid.github.io/SunnmoreExplore/index.html" />
     <link rel="alternate" hreflang="no" href="https://bredeespelid.github.io/SunnmoreExplore/index.html" />
-    <link rel="alternate" hreflang="en" href="https://bredeespelid.github.io/SunnmoreExplore/Eng.html" /> <!-- Korrekt filnavn Eng.html -->
+    <link rel="alternate" hreflang="en" href="https://bredeespelid.github.io/SunnmoreExplore/Eng.html" />
     <link rel="alternate" hreflang="x-default" href="https://bredeespelid.github.io/SunnmoreExplore/index.html" />
     <!-- Slutt SEO-linker -->
 
@@ -42,18 +42,18 @@
 
         /* Header / Navigasjon */
         .main-header { background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; padding: 10px 0; }
-        .main-header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; } /* lagt til flex-wrap */
-        .logo { font-family: var(--header-font); font-size: 1.8em; font-weight: bold; color: var(--primary-color); text-decoration: none; white-space: nowrap; order: 1; } /* lagt til order */
+        .main-header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { font-family: var(--header-font); font-size: 1.8em; font-weight: bold; color: var(--primary-color); text-decoration: none; white-space: nowrap; order: 1; }
         .logo:hover { text-decoration: none; }
-        .main-nav { order: 4; width: 100%; } /* Endret order, lagt til width for mobilmeny */
+        .main-nav { order: 4; width: 100%; }
         .main-nav ul { list-style: none; display: flex; margin: 0; padding: 0; }
         .main-nav ul li { margin-left: 25px; }
-        .main-nav ul li:first-child { margin-left: 0; } /* Fjerner margin for første element */
+        .main-nav ul li:first-child { margin-left: 0; }
         .main-nav ul li a { font-family: var(--header-font); color: var(--primary-color); font-weight: bold; font-size: 1em; padding: 5px 0; text-decoration: none; transition: color 0.3s ease; border-bottom: 2px solid transparent; white-space: nowrap; }
         .main-nav ul li a:hover, .main-nav ul li a.active { color: var(--accent-color); border-bottom-color: var(--accent-color); }
 
         /* Hamburger Meny Ikon */
-        .menu-toggle { display: none; cursor: pointer; background: none; border: none; padding: 10px; margin: 0; z-index: 1001; order: 3; margin-left: auto; } /* lagt til order og margin-left */
+        .menu-toggle { display: none; cursor: pointer; background: none; border: none; padding: 10px; margin: 0; z-index: 1001; order: 3; margin-left: auto; }
         .menu-toggle .bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: var(--primary-color); transition: all 0.3s ease-in-out; }
         .menu-toggle.open .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
         .menu-toggle.open .bar:nth-child(2) { opacity: 0; }
@@ -63,43 +63,35 @@
         .language-selector {
             display: flex;
             align-items: center;
-            gap: 10px; /* Mellomrom mellom flaggene */
-            order: 2; /* Plasseres etter logo, før hamburger */
-            margin-left: auto; /* Skyver den til høyre på desktop */
-            padding-left: 15px; /* Pusterom fra nav på større skjermer */
-            margin-right: 10px; /* Plass før hamburger på mobil */
+            gap: 10px;
+            order: 2;
+            margin-left: auto;
+            padding-left: 15px;
+            margin-right: 10px;
         }
-
         .language-selector img {
-            display: block; /* Fjerner evt. ekstra plass under bildet */
-            border: 1px solid #ccc; /* Tynn ramme rundt flagg */
-            height: 18px; /* Juster høyde etter ønske */
-            width: auto; /* Beholder sideforhold */
-            border-radius: 2px; /* Små runde hjørner */
+            display: block;
+            border: 1px solid #ccc;
+            height: 18px;
+            width: auto;
+            border-radius: 2px;
         }
-
         .language-selector a {
-            line-height: 0; /* Forhindrer at linken tar mer høyde enn bildet */
+            line-height: 0;
             transition: opacity 0.3s ease;
-            border-bottom: 2px solid transparent; /* Plassholder for aktiv kant */
-            padding-bottom: 2px; /* Løfter bildet litt for å matche nav-linker */
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
         }
-
-        /* Stil for inaktivt flagg */
         .language-selector a:not(.active-lang) {
-            opacity: 0.65; /* Gjør det litt dusere */
+            opacity: 0.65;
         }
-
-        /* Hover-effekt for inaktivt flagg */
         .language-selector a:not(.active-lang):hover {
             opacity: 1;
         }
-
-        /* Stil for aktivt flagg */
         .language-selector a.active-lang {
-            cursor: default; /* Viser at det ikke er klikkbart */
+            cursor: default;
             opacity: 1;
-            border-bottom: 2px solid var(--accent-color); /* Samme farge som aktiv nav-link */
+            border-bottom: 2px solid var(--accent-color);
         }
         /* ----- SLUTT SPRÅKVELGER STYLING ----- */
 
@@ -155,6 +147,19 @@
         #kontakt ul li strong { color: var(--primary-color); display: inline-block; min-width: 120px; }
         #kontakt .facebook-button { margin-top: 25px; background-color: #1877F2; }
         #kontakt .facebook-button:hover { background-color: #166fe5; }
+        /* Stil for stengt-melding i kontaktseksjon */
+        #kontakt .closure-info {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-top: 25px; /* Mer plass over */
+            margin-bottom: 15px; /* Plass under før knappen */
+            font-size: 1.1em;
+            padding: 10px;
+            background-color: rgba(217, 119, 6, 0.1); /* Lett bakgrunnsfarge basert på accent */
+            border: 1px dashed var(--accent-color);
+            border-radius: 5px;
+            display: inline-block; /* For at den ikke skal ta full bredde */
+        }
 
         /* Footer */
         .main-footer { background-color: var(--primary-color); color: var(--secondary-color); padding: 40px 0 20px 0; text-align: center; }
@@ -173,21 +178,20 @@
         }
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; } h2 { font-size: 1.8rem; } h3 { font-size: 1.3rem; }
-            .logo { font-size: 1.5em; flex-grow: 0; } /* Justert logo */
+            .logo { font-size: 1.5em; flex-grow: 0; }
 
-            .menu-toggle { display: block; } /* Viser hamburger */
+            .menu-toggle { display: block; }
 
             .language-selector {
-                 /* order: 2; er satt tidligere */
-                 margin-left: 0; /* Fjerner auto margin for mobil */
-                 margin-right: 10px; /* Plass mellom flagg og hamburger */
+                 margin-left: 0;
+                 margin-right: 10px;
                  padding-left: 0;
             }
 
             .main-nav {
-                display: none; /* Skjult som standard */
+                display: none;
                 position: absolute;
-                top: 100%; /* Rett under header */
+                top: 100%;
                 left: 0;
                 width: 100%;
                 background-color: rgba(255, 255, 255, 0.98);
@@ -195,9 +199,8 @@
                 padding-top: 10px;
                 padding-bottom: 20px;
                 border-top: 1px solid #eee;
-                /* order: 4; er satt tidligere */
             }
-            .main-nav.active { display: block; } /* Vises når aktiv */
+            .main-nav.active { display: block; }
 
             .main-nav ul { flex-direction: column; align-items: center; width: 100%; }
             .main-nav ul li { margin: 0; width: 100%; text-align: center; }
@@ -220,17 +223,18 @@
             h1 { font-size: 1.9rem; } h2 { font-size: 1.6rem; }
             .main-header .container { padding: 0 15px; }
             .logo { font-size: 1.3em; }
-            .language-selector img { height: 16px; } /* Litt mindre flagg */
+            .language-selector img { height: 16px; }
             .language-selector { gap: 8px; margin-right: 5px; }
             .hero { height: 60vh; }
             .hero-content p { font-size: 1rem; }
             .cta-button { padding: 10px 20px; font-size: 1rem; }
             .service-card { padding: 20px; }
-             .service-card img.service-icon { width: 60px; height: 60px; } /* Mindre ikon på små skjermer */
+             .service-card img.service-icon { width: 60px; height: 60px; }
             .gallery-slide img { height: 250px; }
             #kontakt ul li { font-size: 1rem; }
             #kontakt ul li strong { min-width: auto; display: block; margin-bottom: 3px; }
             #kontakt ul li span { display: block; }
+            #kontakt .closure-info { font-size: 1em; padding: 8px; } /* Juster for mobil */
         }
     </style>
 </head>
@@ -239,18 +243,14 @@
     <header class="main-header">
         <div class="container">
             <a href="#hero" class="logo">Sunnmøre Explore</a>
-
-            <!-- Språkvelger med OPPDATERTE bildelenker -->
             <div class="language-selector">
                 <a href="index.html" class="active-lang" aria-label="Norsk språkvalg (aktiv)">
                     <img src="https://github.com/bredeespelid/SunnmoreExplore/blob/main/NorFlag.png?raw=true" alt="Norsk flagg" width="24" height="18">
                 </a>
-                <a href="Eng.html" aria-label="Switch to English language"> <!-- Korrekt filnavn Eng.html -->
+                <a href="Eng.html" aria-label="Switch to English language">
                     <img src="https://github.com/bredeespelid/SunnmoreExplore/blob/main/EngFlag.png?raw=true" alt="Engelsk flagg" width="24" height="18">
                 </a>
             </div>
-            <!-- Slutt Språkvelger -->
-
             <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -302,17 +302,17 @@
                         <h3>Klatrekurs</h3>
                         <p>Lær å klatre trygt ute eller inne på Sunnmøre. Vi tilbyr alt fra introduksjon til brattkortkurs.</p>
                     </div>
-                    <!-- Fjelltur & Guiding -->
+                    <!-- Fjellturer -->
                     <div class="service-card">
-                         <img src="https://github.com/bredeespelid/SunnmoreExplore/blob/main/Fjelltur_%26_Guiding.jpg?raw=true" alt="Fjelltur med guide i Sunnmørsalpene" class="service-icon">
-                        <h3>Fjelltur & Guiding</h3>
-                        <p>Bli med på en guidet fjelltur på Sunnmøre! Vi tilpasser turer i Sunnmørsalpene etter dine ønsker, fra enkle vandringer til krevende toppturer.</p>
+                         <img src="https://github.com/bredeespelid/SunnmoreExplore/blob/main/Fjelltur_%26_Guiding.jpg?raw=true" alt="Fjelltur i Sunnmørsalpene" class="service-icon">
+                        <h3>Fjellturer</h3>
+                        <p>Bli med på en tilrettelagt fjelltur på Sunnmøre! Vi tilpasser turer i Sunnmørsalpene etter dine ønsker, fra enkle vandringer til krevende toppturer.</p>
                     </div>
                     <!-- Fjordopplevelser -->
                     <div class="service-card">
                         <img src="https://github.com/bredeespelid/SunnmoreExplore/blob/main/Fjord.jpg?raw=true" alt="Kajakkpadling på en Sunnmørsfjord" class="service-icon">
                         <h3>Fjordopplevelser</h3>
-                        <p>Opplev de vakre Sunnmørsfjordene. Vi tilbyr guidede kajakkturer og andre eventyr ved fjorden.</p>
+                        <p>Opplev de vakre Sunnmørsfjordene. Vi arrangerer kajakkturer og andre eventyr ved fjorden.</p>
                     </div>
                     <!-- Kultur & Teambuilding -->
                      <div class="service-card">
@@ -326,32 +326,24 @@
 
         <!-- Galleri Seksjon -->
         <section id="galleri" class="section section-light">
-            <div class="container">
+             <div class="container">
                 <h2>Glimt fra våre Sunnmørsopplevelser</h2>
-                 <!-- VIKTIG: Bytt ut placeholder-bildene under med dine egne bilder! -->
-                <div class="gallery-slider-container">
+                 <div class="gallery-slider-container">
                     <div class="gallery-slider">
-                        <div class="gallery-slide">
-                            <img src="https://via.placeholder.com/800x450/2c5d4f/ffffff?text=Galleri+Bilde+1" alt="Beskrivende tekst for Galleri Bilde 1">
-                        </div>
-                        <div class="gallery-slide">
-                            <img src="https://via.placeholder.com/800x450/d97706/ffffff?text=Galleri+Bilde+2" alt="Beskrivende tekst for Galleri Bilde 2">
-                        </div>
-                        <div class="gallery-slide">
-                             <img src="https://via.placeholder.com/800x450/5b8c85/ffffff?text=Galleri+Bilde+3" alt="Beskrivende tekst for Galleri Bilde 3">
-                        </div>
-                         <!-- Legg til flere slides her om nødvendig -->
+                        <div class="gallery-slide"><img src="https://via.placeholder.com/800x450/2c5d4f/ffffff?text=Galleri+Bilde+1" alt="Beskrivende tekst for Galleri Bilde 1"></div>
+                        <div class="gallery-slide"><img src="https://via.placeholder.com/800x450/d97706/ffffff?text=Galleri+Bilde+2" alt="Beskrivende tekst for Galleri Bilde 2"></div>
+                        <div class="gallery-slide"><img src="https://via.placeholder.com/800x450/5b8c85/ffffff?text=Galleri+Bilde+3" alt="Beskrivende tekst for Galleri Bilde 3"></div>
                     </div>
-                     <button class="slider-btn prev-btn" aria-label="Forrige bilde"><</button>
-                     <button class="slider-btn next-btn" aria-label="Neste bilde">></button>
+                     <button class="slider-btn prev-btn" aria-label="Forrige bilde">&lt;</button>
+                     <button class="slider-btn next-btn" aria-label="Neste bilde">&gt;</button>
                  </div>
             </div>
         </section>
 
-        <!-- Kontakt Seksjon -->
+        <!-- Kontakt Seksjon - Oppdatert med stengt-info -->
         <section id="kontakt" class="section section-dark">
             <div class="container">
-                <h2>Skap din Sunnmørsopplevelse</h2>
+                <h2>Ta kontakt</h2>
                 <p>Klar for en uforglemmelig totalopplevelse med fjord, fjell og kultur på Sunnmøre? Kontakt Hilde for en prat om dine ønsker!</p>
                 <ul>
                     <li><strong>Kontaktperson:</strong> <span>Hilde Maria Nicolaisen</span></li>
@@ -359,8 +351,11 @@
                     <li><strong>E-post:</strong> <span><a href="mailto:hilde.maria.nicolaisen@gmail.com">hilde.maria.nicolaisen@gmail.com</a></span></li>
                     <li><strong>Adresse:</strong> <span>Marjamarka 16, 6150 ØRSTA</span></li>
                     <li><strong>Område:</strong> <span>Ørsta, Ulsteinvik & Sunnmørsalpane</span></li>
-                    <li><strong>Åpent:</strong> <span>Etter avtale</span></li>
                 </ul>
+                <div class="closure-info">
+                    <p><strong>VIKTIG: Sunnmøre Explore er midlertidig stengt og planlegger gjenåpning etter sommeren 2025.</strong></p>
+                    <p style="margin-top: 0.5em; margin-bottom: 0;">Du er velkommen til å ta kontakt for å planlegge fremtidige opplevelser.</p>
+                </div>
                  <div>
                      <a href="https://www.facebook.com/SunnmoreExplore" target="_blank" rel="noopener noreferrer" class="cta-button facebook-button">Følg Sunnmøre Explore</a>
                  </div>
@@ -369,20 +364,16 @@
     </main>
 
     <footer class="main-footer">
-        <div class="container footer-content">
+         <div class="container footer-content">
              <div class="social-links">
-                 <a href="https://www.facebook.com/SunnmoreExplore" target="_blank" rel="noopener noreferrer" aria-label="Sunnmøre Explore på Facebook">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-                 </a>
-                 <!-- Legg til evt. Instagram ikon/link her -->
+                 <a href="https://www.facebook.com/SunnmoreExplore" target="_blank" rel="noopener noreferrer" aria-label="Sunnmøre Explore på Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg></a>
              </div>
-            <p>© <span id="current-year"></span> Sunnmøre Explore v/ Hilde Maria Nicolaisen - Unike opplevelser med fjord, fjell & kultur på Sunnmøre. Alle rettigheter reservert.</p>
-            <p class="brreg-info">
-                Organisasjonsnummer: 997 434 315
-            </p>
+            <p>&copy; <span id="current-year"></span> Sunnmøre Explore v/ Hilde Maria Nicolaisen - Unike opplevelser med fjord, fjell & kultur på Sunnmøre. Alle rettigheter reservert.</p>
+            <p class="brreg-info">Organisasjonsnummer: 997 434 315</p>
         </div>
     </footer>
 
+    <!-- JavaScript forblir det samme -->
     <script>
         // Mobilmeny Toggle
         const menuToggle = document.querySelector('.menu-toggle');
@@ -394,20 +385,16 @@
                 menuToggle.setAttribute('aria-expanded', !isExpanded);
                 mainNav.classList.toggle('active');
                 menuToggle.classList.toggle('open');
-                // document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : ''; // Valgfritt: hindre scrolling
             });
-            // Lukk menyen når et nav-link klikkes
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     if (mainNav.classList.contains('active')) {
                          menuToggle.setAttribute('aria-expanded', 'false');
                          mainNav.classList.remove('active');
                          menuToggle.classList.remove('open');
-                         // document.body.style.overflow = ''; // Valgfritt: tillat scrolling igjen
                     }
                 });
             });
-             // Lukk menyen hvis man klikker utenfor den (valgfritt)
              document.addEventListener('click', (event) => {
                  if (mainNav.classList.contains('active')) {
                     const isClickInsideNav = mainNav.contains(event.target);
@@ -416,7 +403,6 @@
                         menuToggle.setAttribute('aria-expanded', 'false');
                         mainNav.classList.remove('active');
                         menuToggle.classList.remove('open');
-                       // document.body.style.overflow = ''; // Valgfritt: tillat scrolling igjen
                     }
                  }
              });
@@ -424,7 +410,7 @@
 
         // Bildekarusell
         const sliderContainer = document.querySelector('.gallery-slider-container');
-        if (sliderContainer) { // Sjekk om container finnes før vi leter etter resten
+        if (sliderContainer) {
             const slider = sliderContainer.querySelector('.gallery-slider');
             const slides = sliderContainer.querySelectorAll('.gallery-slide');
             const prevBtn = sliderContainer.querySelector('.prev-btn');
@@ -433,36 +419,17 @@
 
             if (slider && slides.length > 0 && prevBtn && nextBtn) {
                 const totalSlides = slides.length;
-
-                function updateSliderPosition() {
-                     slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-                }
-
-                nextBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex + 1) % totalSlides;
-                    updateSliderPosition();
-                });
-
-                prevBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                    updateSliderPosition();
-                });
-
-                updateSliderPosition(); // Initialiser
-
-                // Skjul knapper hvis det bare er ett bilde
-                if (totalSlides <= 1) {
-                    prevBtn.style.display = 'none';
-                    nextBtn.style.display = 'none';
-                }
-
+                function updateSliderPosition() { slider.style.transform = `translateX(-${currentIndex * 100}%)`; }
+                nextBtn.addEventListener('click', () => { currentIndex = (currentIndex + 1) % totalSlides; updateSliderPosition(); });
+                prevBtn.addEventListener('click', () => { currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; updateSliderPosition(); });
+                updateSliderPosition();
+                if (totalSlides <= 1) { prevBtn.style.display = 'none'; nextBtn.style.display = 'none'; }
             } else {
                  console.warn("Gallery slider elements incomplete or no slides found inside the container. Slider functionality disabled.");
-                 // Skjul knapper hvis de finnes, men slider/slides mangler
                  if (prevBtn) prevBtn.style.display = 'none';
                  if (nextBtn) nextBtn.style.display = 'none';
             }
-        } // Ingen feilmelding hvis galleri ikke finnes
+        }
 
         // Dynamisk årstall i footer
         const currentYearElement = document.getElementById('current-year');
