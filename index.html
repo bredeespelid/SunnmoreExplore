@@ -1,19 +1,14 @@
 <!DOCTYPE html>
-<!-- Test-->
 <html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO: Optimalisert tittel -->
-    <title>Opplevelser Sunnmøre: Fjord, Fjell & Kultur | Sunnmøre Explore</title> <!-- Tittel justert litt for å reflektere bredden -->
-    <!-- SEO: Optimalisert beskrivelse -->
+    <title>Opplevelser Sunnmøre: Fjord, Fjell & Kultur | Sunnmøre Explore</title>
     <meta name="description" content="Søker du en totalopplevelse på Sunnmøre? Sunnmøre Explore tilbyr unike kombinasjoner av fjord, fjell og kultur. Klatring, fjellturer, kurs og mer.">
-    <!-- SEO: Nøkkelord -->
     <meta name="keywords" content="Opplevelser Sunnmøre, Fjelltur Sunnmøre, Fjord Sunnmøre, Kultur Sunnmøre, Klatrekurs Sunnmøre, Fjellguiding Sunnmøre, Sunnmørsalpene, Topptur Sunnmøre, Ørsta, Ulsteinvik, Hilde Maria Nicolaisen">
 
-
     <style>
-        /* Generell Styling (Identisk med forrige versjon) */
+        /* Generell Styling */
         :root {
             --primary-color: #2c5d4f; /* Mørk grønn */
             --secondary-color: #f0f4f8; /* Lys gråblå */
@@ -58,8 +53,7 @@
         .hero {
             height: 85vh;
             min-height: 400px;
-             /* --- NYTT PLACEHOLDER BILDE HER - BYTT UT DENNE URL-EN! --- */
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://via.placeholder.com/1920x1080/5b8c85/ffffff?text=Totalopplevelse:+Fjord,+Fjell+og+Kultur+på+Sunnmøre') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://github.com/bredeespelid/SunnmoreExplore/blob/main/SunnmoreFjell.jpg?raw=true') no-repeat center center/cover;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -79,21 +73,38 @@
 
         /* Om Oss Seksjon */
         #om-oss .container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        #om-oss img { border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* VIKTIG: Sett inn src for bildet her */ }
+        /* --- Om Oss Bilde Styling Justert - Ingen ramme/skygge --- */
+        #om-oss img {
+            border-radius: 8px; /* Behold runde hjørner */
+            box-shadow: none; /* Fjernet skygge */
+            border: none; /* Sikrer ingen kantlinje */
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
 
         /* Tjenester Seksjon */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .service-card { background-color: #fff; border-radius: 8px; padding: 25px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .service-card { background-color: #fff; border-radius: 8px; padding: 25px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; } /* Lagt til flex for lik høyde */
         .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.12); }
-        .service-card img.service-icon { width: 80px; height: 80px; margin: 0 auto 15px auto; border-radius: 50%; object-fit: cover; }
+        .service-card img.service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px auto;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
         .service-card h3 { margin-bottom: 15px; }
+        .service-card p { flex-grow: 1; } /* Sørger for at p tar opp plassen slik at kortene får lik høyde */
+
 
         /* Galleri Seksjon */
         #galleri { overflow: hidden; }
         .gallery-slider-container { position: relative; max-width: 900px; margin: 0 auto; }
         .gallery-slider { display: flex; transition: transform 0.5s ease-in-out; }
-        .gallery-slide { width: 100%; flex-shrink: 0; }
-        .gallery-slide img { width: 100%; height: 450px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .gallery-slide { min-width: 100%; flex-shrink: 0; }
+        .gallery-slide img { width: 100%; height: 450px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; }
         .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(44, 93, 79, 0.7); color: white; border: none; padding: 10px 15px; font-size: 1.5rem; cursor: pointer; z-index: 10; border-radius: 50%; transition: background-color 0.3s ease; }
         .slider-btn:hover { background-color: var(--primary-color); }
         .prev-btn { left: 15px; }
@@ -103,7 +114,7 @@
         #kontakt .container { max-width: 800px; text-align: center; }
         #kontakt ul { list-style: none; padding: 0; margin-top: 20px; display: inline-block; text-align: left; }
         #kontakt ul li { margin-bottom: 10px; font-size: 1.1rem; }
-        #kontakt ul li strong { color: var(--primary-color); display: inline-block; min-width: 120px; /* Litt mer plass */ }
+        #kontakt ul li strong { color: var(--primary-color); display: inline-block; min-width: 120px; }
         #kontakt .facebook-button { margin-top: 25px; background-color: #1877F2; }
         #kontakt .facebook-button:hover { background-color: #166fe5; }
 
@@ -141,7 +152,7 @@
             .gallery-slide img { height: 300px; }
             .slider-btn { padding: 8px 12px; font-size: 1.2rem; }
             .prev-btn { left: 20px; } .next-btn { right: 20px; }
-            #kontakt ul li strong { min-width: 100px; } /* Juster tilbake for mobil */
+            #kontakt ul li strong { min-width: 100px; }
         }
         @media (max-width: 480px) {
             html { font-size: 15px; }
@@ -152,10 +163,11 @@
             .hero-content p { font-size: 1rem; }
             .cta-button { padding: 10px 20px; font-size: 1rem; }
             .service-card { padding: 20px; }
+             .service-card img.service-icon { width: 60px; height: 60px; } /* Mindre ikon på små skjermer */
             .gallery-slide img { height: 250px; }
             #kontakt ul li { font-size: 1rem; }
-            #kontakt ul li strong { min-width: auto; display: block; margin-bottom: 3px; } /* Bedre struktur på liten mobil */
-            #kontakt ul li span { display: block; } /* Bryt linje etter strong */
+            #kontakt ul li strong { min-width: auto; display: block; margin-bottom: 3px; }
+            #kontakt ul li span { display: block; }
         }
     </style>
 </head>
@@ -185,7 +197,6 @@
         <!-- Hero Seksjon -->
         <section id="hero" class="hero">
             <div class="hero-content">
-                <!-- Justert H1 for å reflektere totalopplevelse -->
                 <h1>Totalopplevelser på Sunnmøre</h1>
                 <p>Utforsk fjord, fjell og kultur i hjertet av Sunnmørsalpene med Sunnmøre Explore.</p>
                 <a href="#tjenester" class="cta-button">Se våre opplevelser</a>
@@ -195,11 +206,8 @@
         <!-- Om Oss Seksjon -->
         <section id="om-oss" class="section section-light">
             <div class="container">
-                 <!-- VIKTIG: Bytt ut placeholder med ekte bilde av Hilde -->
-                 <!-- SEO & Innhold: Oppdatert alt-tekst -->
-                 <img src="" alt="https://github.com/bredeespelid/SunnmoreExplore/blob/main/Om.png?raw=true">
+                 <img src="https://github.com/bredeespelid/SunnmoreExplore/blob/main/Om.jpg?raw=true" alt="Hilde Maria Nicolaisen, grunnlegger av Sunnmøre Explore">
                 <div>
-                    <!-- Innhold: Justert H2 og tekst for å fokusere på totalopplevelse -->
                     <h2>Skaperen av din Sunnmørsopplevelse</h2>
                     <p>Sunnmøre Explore drives av Hilde Maria Nicolaisen fra Ørsta. Hilde er lidenskapelig opptatt av å gi deg en totalopplevelse av alt det vakre Sunnmøre har å by på – fra majestetiske fjell og dype fjorder til den rike lokale kulturen.</p>
                     <p>Mer enn bare en tur, fokuserer Sunnmøre Explore på å skape unike og personlige opplevelser. Vi kombinerer trygge og inspirerende aktiviteter som fjellturer, klatring og kajakkpadling med kulturelle innslag som dansekurs og foredrag.</p>
@@ -211,32 +219,29 @@
         <!-- Tjenester Seksjon -->
         <section id="tjenester" class="section section-dark">
             <div class="container">
-                 <!-- SEO & Innhold: Justert H2 -->
                 <h2>Opplev Fjord, Fjell & Kultur på Sunnmøre</h2>
                 <div class="services-grid">
+                    <!-- Klatrekurs -->
                     <div class="service-card">
-                         <!-- VIKTIG: Bytt ut placeholder med klatrebilde/ikon -->
-                         <img src="https://via.placeholder.com/80x80/d97706/ffffff?text=Klatring" alt="Ikon for klatrekurs Sunnmøre" class="service-icon">
+                         <img src="https://github.com/bredeespelid/SunnmoreExplore/blob/main/Klatre.jpg?raw=true" alt="Innendørs klatrekurs på Sunnmøre" class="service-icon">
                         <h3>Klatrekurs</h3>
                         <p>Lær å klatre trygt ute eller inne på Sunnmøre. Vi tilbyr alt fra introduksjon til brattkortkurs.</p>
                     </div>
+                    <!-- Fjelltur & Guiding -->
                     <div class="service-card">
-                        <!-- VIKTIG: Bytt ut placeholder med fjellbilde/ikon -->
-                         <img src="https://via.placeholder.com/80x80/2c5d4f/ffffff?text=Fjell" alt="Ikon for fjelltur og fjellguiding Sunnmøre" class="service-icon">
-                         <!-- SEO beholdt, men fokus på opplevelse -->
+                         <img src="https://github.com/bredeespelid/SunnmoreExplore/blob/main/Fjelltur_%26_Guiding.jpg?raw=true" alt="Fjelltur med guide i Sunnmørsalpene" class="service-icon">
                         <h3>Fjelltur & Guiding</h3>
                         <p>Bli med på en guidet fjelltur på Sunnmøre! Vi tilpasser turer i Sunnmørsalpene etter dine ønsker, fra enkle vandringer til krevende toppturer.</p>
                     </div>
+                    <!-- Fjordopplevelser -->
                     <div class="service-card">
-                        <!-- VIKTIG: Bytt ut placeholder med kajakk/fjordbilde/ikon -->
-                        <img src="https://via.placeholder.com/80x80/5b8c85/ffffff?text=Fjord" alt="Ikon for fjordopplevelser Sunnmøre" class="service-icon">
+                        <img src="https://github.com/bredeespelid/SunnmoreExplore/blob/main/Fjord.jpg?raw=true" alt="Kajakkpadling på en Sunnmørsfjord" class="service-icon">
                         <h3>Fjordopplevelser</h3>
                         <p>Opplev de vakre Sunnmørsfjordene. Vi tilbyr guidede kajakkturer og andre eventyr ved fjorden.</p>
                     </div>
+                    <!-- Kultur & Teambuilding -->
                      <div class="service-card">
-                        <!-- VIKTIG: Bytt ut placeholder med kultur/dans/foredragsbilde/ikon -->
-                        <img src="https://via.placeholder.com/80x80/a0aec0/ffffff?text=Kultur" alt="Ikon for kultur og teambuilding Sunnmøre" class="service-icon">
-                         <!-- Innhold: Justert H3 -->
+                        <img src="https://github.com/bredeespelid/SunnmoreExplore/blob/main/Teambuilding.jpg?raw=true" alt="Gruppeaktivitet for teambuilding på Sunnmøre" class="service-icon">
                         <h3>Kultur & Teambuilding</h3>
                         <p>Fordyp deg i lokal kultur! Vi tilbyr dansekurs, korkurs, foredrag og teambuilding som kombinerer natur og kultur.</p>
                     </div>
@@ -247,23 +252,20 @@
         <!-- Galleri Seksjon -->
         <section id="galleri" class="section section-light">
             <div class="container">
-                 <!-- Innhold: Justert H2 -->
                 <h2>Glimt fra våre Sunnmørsopplevelser</h2>
+                 <!-- VIKTIG: Bytt ut placeholder-bildene under med dine egne bilder! -->
                 <div class="gallery-slider-container">
                     <div class="gallery-slider">
                         <div class="gallery-slide">
-                            <!-- VIKTIG: Bytt ut placeholder 1 -->
-                            <img src="https://via.placeholder.com/800x450/2c5d4f/ffffff?text=Klatrebilde+1" alt="Klatring under en opplevelsestur på Sunnmøre">
+                            <img src="https://via.placeholder.com/800x450/2c5d4f/ffffff?text=Galleri+Bilde+1" alt="Beskrivende tekst for Galleri Bilde 1">
                         </div>
                         <div class="gallery-slide">
-                             <!-- VIKTIG: Bytt ut placeholder 2 -->
-                            <img src="https://via.placeholder.com/800x450/d97706/ffffff?text=Fjordbilde+1" alt="Nydelig utsikt over Hjørundfjorden under en totalopplevelse på Sunnmøre">
+                            <img src="https://via.placeholder.com/800x450/d97706/ffffff?text=Galleri+Bilde+2" alt="Beskrivende tekst for Galleri Bilde 2">
                         </div>
                         <div class="gallery-slide">
-                             <!-- VIKTIG: Bytt ut placeholder 3 -->
-                             <img src="https://via.placeholder.com/800x450/5b8c85/ffffff?text=Fjelltopp+Sunnmøre" alt="Gruppe nyter utsikten fra en fjelltur i Sunnmørsalpene">
+                             <img src="https://via.placeholder.com/800x450/5b8c85/ffffff?text=Galleri+Bilde+3" alt="Beskrivende tekst for Galleri Bilde 3">
                         </div>
-                         <!-- Legg til flere slides med SEO-optimaliserte alt-tekster -->
+                         <!-- Legg til flere slides her om nødvendig -->
                     </div>
                      <button class="slider-btn prev-btn" aria-label="Forrige bilde">&lt;</button>
                      <button class="slider-btn next-btn" aria-label="Neste bilde">&gt;</button>
@@ -274,12 +276,9 @@
         <!-- Kontakt Seksjon -->
         <section id="kontakt" class="section section-dark">
             <div class="container">
-                 <!-- Innhold: Justert H2 -->
                 <h2>Skap din Sunnmørsopplevelse</h2>
-                 <!-- Innhold: Justert P -->
                 <p>Klar for en uforglemmelig totalopplevelse med fjord, fjell og kultur på Sunnmøre? Kontakt Hilde for en prat om dine ønsker!</p>
                 <ul>
-                     <!-- Innhold: Endret "Guide" til "Kontaktperson" -->
                     <li><strong>Kontaktperson:</strong> <span>Hilde Maria Nicolaisen</span></li>
                     <li><strong>Telefon:</strong> <span><a href="tel:+4741287186">412 87 186</a></span></li>
                     <li><strong>E-post:</strong> <span><a href="mailto:hilde.maria.nicolaisen@gmail.com">hilde.maria.nicolaisen@gmail.com</a></span></li>
@@ -302,7 +301,6 @@
                  </a>
                  <!-- Legg til evt. Instagram ikon/link her -->
              </div>
-             <!-- Innhold: Justert copyright -->
             <p>&copy; <span id="current-year"></span> Sunnmøre Explore v/ Hilde Maria Nicolaisen - Unike opplevelser med fjord, fjell & kultur på Sunnmøre. Alle rettigheter reservert.</p>
             <p class="brreg-info">
                 Organisasjonsnummer: 997 434 315
@@ -311,7 +309,7 @@
     </footer>
 
     <script>
-        // --- Mobilmeny Toggle (Identisk med forrige versjon) ---
+        // Mobilmeny Toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const mainNav = document.querySelector('.main-nav');
         const navLinks = document.querySelectorAll('.main-nav a');
@@ -347,24 +345,45 @@
              });
         } else { console.warn("Menu toggle button or main navigation not found."); }
 
-        // --- Enkel Bildekarusell (Identisk med forrige versjon) ---
+        // Bildekarusell
         const sliderContainer = document.querySelector('.gallery-slider-container');
         const slider = document.querySelector('.gallery-slider');
         const slides = document.querySelectorAll('.gallery-slide');
         const prevBtn = document.querySelector('.prev-btn');
         const nextBtn = document.querySelector('.next-btn');
         let currentIndex = 0;
+
         if (sliderContainer && slider && slides.length > 0 && prevBtn && nextBtn) {
             const totalSlides = slides.length;
-            slider.style.width = `${totalSlides * 100}%`;
-            function updateSliderPosition() { slider.style.transform = `translateX(-${currentIndex * 100}%)`; }
-            updateSliderPosition();
-            nextBtn.addEventListener('click', () => { currentIndex = (currentIndex + 1) % totalSlides; updateSliderPosition(); });
-            prevBtn.addEventListener('click', () => { currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; updateSliderPosition(); });
-            window.addEventListener('resize', updateSliderPosition);
-        } else { if (sliderContainer) { sliderContainer.style.display = 'none'; console.warn("Gallery slider elements incomplete. Hiding gallery."); } }
 
-        // --- Dynamisk årstall i footer (Identisk med forrige versjon) ---
+            function updateSliderPosition() {
+                 slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateSliderPosition();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateSliderPosition();
+            });
+
+            updateSliderPosition(); // Initialiser
+
+        } else {
+            if (sliderContainer) {
+                 console.warn("Gallery slider elements incomplete or no slides found. Slider functionality disabled.");
+                 // Skjul knapper hvis det ikke er noen slides å bla i
+                 if (slides.length === 0) {
+                    if (prevBtn) prevBtn.style.display = 'none';
+                    if (nextBtn) nextBtn.style.display = 'none';
+                 }
+            }
+        }
+
+        // Dynamisk årstall i footer
         const currentYearElement = document.getElementById('current-year');
         if (currentYearElement) { currentYearElement.textContent = new Date().getFullYear(); }
     </script>
